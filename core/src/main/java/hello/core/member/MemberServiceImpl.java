@@ -2,7 +2,11 @@ package hello.core.member;
 
 public class MemberServiceImpl implements MemberService{
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository(); //cmd shift enter 자동완성
+    private final MemberRepository memberRepository; //cmd shift enter 자동완성
+
+    public MemberServiceImpl(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     @Override
     public void join(Member member) {
